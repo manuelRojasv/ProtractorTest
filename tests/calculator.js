@@ -22,7 +22,7 @@ describe ('demo Calculator test', function(){
           //expect(result.getText()).toEqual('14');
             homepage.verifyResult('17');
 
-           browser.sleep(3000)
+           browser.sleep(7000)
     });
 
 });
