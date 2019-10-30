@@ -1,6 +1,6 @@
 let homepage = require('../pages/homepage')
 
-describe ('demo Calculator test', function(){
+describe ('demo Calculator test - Add, subs, multi', function(){
 
     it('addition test', function(){
            
@@ -21,8 +21,57 @@ describe ('demo Calculator test', function(){
           //let result = element(by.cssContainingText('.ng-binding', '14'));
           //expect(result.getText()).toEqual('14');
             homepage.verifyResult('17');
-
-           browser.sleep(7000)
+            browser.sleep(2000)
+           
     });
+
+    it('Substraction test', function(){
+          
+          homepage.enterFirstNumber('5');  
+          homepage.selectSubstraction();
+          homepage.enterSecondNumber('3');
+          homepage.clickGo();
+          homepage.verifyResult('2');
+          browser.sleep(2000)
+      
+
+    });
+
+    it('Multiplication test', function(){
+        homepage.enterFirstNumber('5');
+        homepage.selectMulti();
+        homepage.enterSecondNumber('10'); 
+        homepage.clickGo();
+        homepage.verifyResult('50');
+        browser.sleep(2000)
+
+    });
+    
+});
+
+describe ('demo calculator test - mod, div', function(){
+  
+  it('division test', function(){
+          
+    homepage.enterFirstNumber('100');  
+    homepage.selectDiv();
+    homepage.enterSecondNumber('5');
+    homepage.clickGo();
+    homepage.verifyResult('20');
+    browser.sleep(2000)
+  
+});  
+
+ it('Modulo test', function(){
+          
+     homepage.enterFirstNumber('89');  
+     homepage.selectMod();
+     homepage.enterSecondNumber('9');
+     homepage.clickGo();
+     homepage.verifyResult('8');
+     browser.sleep(2000)
+
+});
+
 
 });
